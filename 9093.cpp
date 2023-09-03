@@ -12,7 +12,7 @@ int main(void)
     {
         string str;
         getline(cin,str);
-        str+='\n';
+        str += '\n';
         stack<char> S;
         for(char ch: str)
         {
@@ -33,4 +33,4 @@ int main(void)
     }
     
     return 0;
-}
+
