@@ -2,6 +2,10 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/92341) 
 
+
+### 걸린 시간
+1시간30분
+
 ### 성능 요약
 
 메모리: 4.18 MB, 시간: 7.79 ms
