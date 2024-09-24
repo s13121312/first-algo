@@ -2,6 +2,9 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/340213) 
 
+### 걸린 시간
+2시간 ㅡㅡ 문자열 다루는 문제가 확실히 약한것같다.
+
 ### 성능 요약
 
 메모리: 4.19 MB, 시간: 0.08 ms
