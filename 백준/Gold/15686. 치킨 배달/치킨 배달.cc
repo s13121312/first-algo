@@ -67,7 +67,7 @@ void dfs(int start, int curm){
     //순열은 순서에 상관있게 뽑는다.
 
     for(int i=start;i<chickenhouse.size();i++){
-        //if(find(choosen.begin(), choosen.end(), chickenhouse[i]) != chickenhouse.end())continue;
+        if(find(choosen.begin(), choosen.end(), chickenhouse[i]) != choosen.end())continue;
         choosen.push_back(chickenhouse[i]);
         dfs(i+1, curm + 1);
         //dfs(i,curm+1)과의 차이는 중복이되냐안되냐의 차이가난다. 
