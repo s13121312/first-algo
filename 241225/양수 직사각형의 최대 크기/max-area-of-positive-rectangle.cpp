@@ -24,7 +24,7 @@ int find_rectangle(int x, int y, int w, int h){
     for(int i=x;i<x+h;i++){
         for(int j=y;j<y+w;j++){
             if(out_range(i,j))return -1;
-            if(arr[i][j] < 0)return -1; //이미 나가리 확정
+            if(arr[i][j] <= 0)return -1; //이미 나가리 확정
             sum++; 
         }
     }
