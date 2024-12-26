@@ -49,7 +49,8 @@ void pro(){
         cin >> r >> d;   //행 번호, 방향(L이면 오른쪽으로 밀림, R이면 왼쪽으로 밀림)
 
         shift(r, d);
-        if(n == 1)break;
+        //cout << "shift"<< '\n';
+        //if(n == 1)break;
         char cur_d = (d == 'L')? 'R' : 'L';
 
         for(int j=r-1;j>=1;j--){
@@ -57,6 +58,7 @@ void pro(){
             if(!isSameRow(j,j+1))break;
 
             shift(j, cur_d);
+            cout << "shift"<< '\n';
             cur_d = (cur_d == 'L') ? 'R' : 'L';
         }
 
@@ -65,6 +67,7 @@ void pro(){
             if(!isSameRow(j-1,j))break;
 
             shift(j, cur_d);
+            cout << "shift"<< '\n';
             cur_d = (cur_d == 'L') ? 'R' : 'L';
         }
     }
