@@ -58,7 +58,7 @@ void pro(){
             if(!isSameRow(j,j+1))break;
 
             shift(j, cur_d);
-            cout << "shift"<< '\n';
+            //cout << "shift"<< '\n';
             cur_d = (cur_d == 'L') ? 'R' : 'L';
         }
 
@@ -67,7 +67,7 @@ void pro(){
             if(!isSameRow(j-1,j))break;
 
             shift(j, cur_d);
-            cout << "shift"<< '\n';
+            //cout << "shift"<< '\n';
             cur_d = (cur_d == 'L') ? 'R' : 'L';
         }
     }
