@@ -20,32 +20,24 @@ void shift(){
 
 int run_length_encoding(){
     char cur;
-    char pre;
     int comp = 1;
     string res = "";
 
 
     bool chk =false; //같으면 true
-
+    cur=str[0];
     for(int i=1;i<str.size();i++){
-        cur=str[i];
-        pre = str[i-1];
-        if(cur != pre){
-            res += pre;
+        if(cur == str[i]) comp++;
+        else{
+            res += cur;
             res += to_string(comp); 
-            comp = 0;
-            chk =false;
+            cur = str[i];
+            comp = 1;
         }
-        comp++;
-        chk = true;
+        
     }
-    if(chk){
-        res += pre; 
-        res += to_string(comp);
-    }else {
-        res += cur;
-        res += to_string(comp);
-    }
+    res += cur;
+    res += to_string(comp);
     //cout << res << '\n';
     return res.size();
 }
