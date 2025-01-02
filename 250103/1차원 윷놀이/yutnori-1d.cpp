@@ -16,16 +16,18 @@ void input(){
 }
 
 void backtracking(int idx, int score){
+    ans = max(ans, score);
     if(idx == n){
-        ans = max(ans, score);
+        
         return;
     }
 
 
     for(int i=1;i<=k;i++){
-        if(cur[i] >= m)continue;
+        if(cur[i] >= m)continue;  //for루프에서 커트 해버리기때문에 ans초기화할때 조건문 바깥에 놔둬야함
         cur[i] += arr[idx];
-        int new_score = (cur[i] >= m) ? score+1 : score;  
+        int new_score = (cur[i] >= m) ? score+1 : score;
+    
         backtracking(idx+1, new_score);
         cur[i] -= arr[idx];
     }
