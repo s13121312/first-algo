@@ -3,42 +3,31 @@ using namespace std;
 
 int n, m, k;
 int arr[15];
-vector<int> v;
-bool isused[12];
 bool chk[5];
+int cur[105];
 
 int ans =0;
 void input(){
-    cin >> n >> m >>k;
+    cin >> n >> m >> k;
     for(int i=0;i<n;i++){
         cin >> arr[i];
     }
+    for(int i=0;i<m;i++)cur[i]= 1;
 }
 
-void backtracking(int cur){
-    if(cur == n){
-        int cnt = 0;
-        unordered_map<int,int> um;
-
-        for(int i=0;i<n;i++){
-            um[v[i]] += arr[i];
-            if(um[v[i]] >=m-1){
-                if(chk[v[i]])continue;
-                cnt++;
-                um[v[i]] = 0;
-                chk[v[i]] = true;
-            }
-        }
-        
-        ans = max(ans, cnt);
+void backtracking(int idx, int score){
+    if(idx == n){
+        ans = max(ans, score);
         return;
     }
 
 
     for(int i=1;i<=k;i++){
-        v.push_back(i);
-        backtracking(cur+1);
-        v.pop_back();
+        if(cur[i] >= m)continue;
+        cur[i] += arr[idx];
+        int new_score = (cur[i] >= m) ? score+1 : score;  
+        backtracking(idx+1, new_score);
+        cur[i] -= arr[idx];
     }
 }
 
@@ -46,7 +35,7 @@ void backtracking(int cur){
 int main() {
     // Please write your code here.
     input();
-    backtracking(0);
+    backtracking(0, 0);
     cout << ans;
 
     return 0;
