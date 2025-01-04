@@ -4,7 +4,7 @@ using namespace std;
 string input;
 int n;
 string giho = "";
-int ans = 0;
+int ans = -0x7fffffff;
 vector<char> alphabet;
 //a, b, c, d, e, f
 vector<int> af_arr;
