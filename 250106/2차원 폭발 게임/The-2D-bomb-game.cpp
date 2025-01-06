@@ -36,7 +36,7 @@ void pro(){
     // while(bomb()){
     // }
 
-    for(int i=0;i<10;i++)bomb();
+    for(int i=0;i<100;i++)bomb();
 
     //print();
     
