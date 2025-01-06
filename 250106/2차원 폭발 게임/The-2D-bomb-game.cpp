@@ -29,7 +29,7 @@ void pro(){
         return;
     }
     for(int i=0;i<k;i++){
-        for(int i=0;i<100;i++)bomb();
+        for(int i=0;i<10;i++)bomb();
         rotate();
     }
 
