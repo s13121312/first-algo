@@ -24,6 +24,10 @@ void input(){
 }
 
 void pro(){
+    if(m == 1){
+        cout << 0;
+        return;
+    }
     for(int i=0;i<k;i++){
         bomb();
         rotate();
@@ -35,6 +39,7 @@ void pro(){
     for(int i=0;i<10;i++)bomb();
 
     //print();
+    
     cout << bomb_quantity();
 }
 
