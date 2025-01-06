@@ -34,7 +34,7 @@ void pro(){
 
     for(int i=0;i<10;i++)bomb();
 
-    print();
+    //print();
     cout << bomb_quantity();
 }
 
