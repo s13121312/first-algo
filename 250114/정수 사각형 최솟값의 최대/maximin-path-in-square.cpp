@@ -2,7 +2,7 @@
 using namespace std;
 
 int n;
-int ans =0;
+int ans = 0;
 int arr[105][105];
 int dp[105][105];
 
@@ -16,6 +16,7 @@ void input(){
 }
 
 void pro(){
+    if(n == 1)ans = arr[0][0];
     dp[0][0] = arr[0][0];
 
     for(int i=1;i<n;i++){
