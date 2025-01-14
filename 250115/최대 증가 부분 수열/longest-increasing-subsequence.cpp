@@ -12,7 +12,7 @@ void input(){
 }
 void init(){
     for(int i=0;i<n;i++){
-        dp[i] = INT_MIN;
+        dp[i] = 1;
     }
 }
 
