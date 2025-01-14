@@ -54,7 +54,19 @@ void pro2(){
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            int tmp =1;
+            for(int d=0;d<4;d++){
+                int nx = i + dx[d];
+                int ny = j + dy[d];
+                if(nx < 0 || nx >= n || ny < 0 || ny >= n)continue;
+                if(arr[nx][ny] <= arr[i][j])continue;
+                dp[nx][ny] = max(dp[nx][ny], dp[i][j] + 1);
+                //cout << dp[nx][ny];
+            }
+        }
+    }
+
+    for(int i=n-1;i>=0;i--){
+        for(int j=n-1;j>=0;j--){
             for(int d=0;d<4;d++){
                 int nx = i + dx[d];
                 int ny = j + dy[d];
