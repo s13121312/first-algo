@@ -17,18 +17,28 @@ void input(){
 void init(){
     
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+        for(int j=0;j<m;j++){
             dp[i][j] = INT_MIN;
         }
     }
     dp[0][0] = 1;
 }
 
+void print(){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout << dp[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+    cout << '\n';
+}
+
 void pro(){
     init();
 
     for(int i=1;i<n;i++){
-        for(int j=1;j<n;j++){
+        for(int j=1;j<m;j++){
 
             for(int x=0;x<i;x++){
                 for(int y=0;y<j;y++){
@@ -42,10 +52,12 @@ void pro(){
 
     int ans = 0;
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+        for(int j=0;j<m;j++){
             ans = max(ans, dp[i][j]);
         }
     }
+    //print();
+
     cout << ans;
 }
 
