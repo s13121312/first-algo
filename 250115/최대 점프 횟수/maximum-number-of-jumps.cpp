@@ -38,7 +38,7 @@ void pro(){
     }
     int ans = 0;
 
-    print();
+    //print();
 
     for(int i=0;i<n;i++){
         ans = max(ans, dp[i]);
