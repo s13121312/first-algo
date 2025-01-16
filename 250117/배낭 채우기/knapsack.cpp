@@ -24,11 +24,18 @@ void input(){
     }
 
     dp[0][0] = 0;
-    for(int i=0;i<n;i++){
+    for(int i=1;i<=m;i++){
+        if(i >= w[0]){
+            dp[0][i] = v[0];
+        }
+    }
+
+    for(int i=1;i<n;i++){
         for(int j=1;j<=m;j++){
             if(j >= w[i]){
                 dp[i][j] = v[i];
             }
+            else dp[i][j] = dp[i-1][j];
         }
     }
 
@@ -39,10 +46,12 @@ void pro(){
 
 
     for(int i=1;i<n;i++){
-        for(int j=m;j>=1;j--){
+        for(int j=1;j<=m;j++){
             if(j >= w[i]){
                 //if(dp[i][j-w[i]] == 0)continue;
-                dp[i][j] = max(dp[i][j], dp[i-1][j-w[i]] + v[i]);
+                dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]);
+            } else{
+                dp[i][j] = dp[i-1][j];
             }
         }
     }
