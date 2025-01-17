@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 int arr[105];
-int dp[105];
+int dp[1000005];
 
 int total=0;
 int half;
@@ -40,7 +40,7 @@ void pro(){
     }
     //print();
 
-    if(dp[half] > 0 && total%2  == 0){
+    if(dp[half] > 0 && (total%2)  == 0){
         cout << "Yes";
     } else{
         cout << "No";
