@@ -13,35 +13,24 @@ void input(){
     }
 }
 
-//xor하는 함수
-int calc(){
-    int res = v[0];
-    for(int i=1;i<v.size();i++){
-        res =  res ^ v[i];
+void pro(int cur, int cnt,int val){
+    if(cnt == m){
+        ans = max(ans, val);
     }
-    return res;
-}
 
-void pro(int depth, int num_idx){
+    if(cur == n){
+        return;
+    }
     
-    if(!v.empty()){
-        if(v.size() == m){
-            ans = max(ans, calc());
-        }
-    }
-    //cout << ans << ' ';
+    pro(cur+1,cnt, val);
 
-    for(int i=num_idx;i<n;i++){
-        v.push_back(arr[i]);
-        pro(depth+1, i+1);
-        v.pop_back();
-    }
+    pro(cur + 1, cnt+1, val^ arr[cur]);
 }
 
 int main() {
     // Please write your code here.
     input();
-    pro(0, 0);
+    pro(0, 0, 0);
     cout << ans;
 
 
