@@ -3,7 +3,7 @@ using namespace std;
 
 int n,m;
 int arr[25];
-int ans = -0x7fffffff;
+int ans = 0;
 vector<int> v;
 
 void input(){
