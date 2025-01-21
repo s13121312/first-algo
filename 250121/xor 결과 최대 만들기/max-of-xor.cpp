@@ -24,15 +24,14 @@ int calc(){
 
 void pro(int depth, int num_idx){
     
-    if(!v.empty())ans = max(ans, calc());
-    //cout << ans << ' ';
-    if(depth == m){
-        return;
+    if(!v.empty()){
+        if(v.size() == m)ans = max(ans, calc());
     }
+    //cout << ans << ' ';
 
-    for(int i=depth + 1;i<n;i++){
+    for(int i=depth;i<n;i++){
         v.push_back(arr[i]);
-        pro(depth+1, i);
+        pro(depth+1, i+1);
         v.pop_back();
     }
 }
