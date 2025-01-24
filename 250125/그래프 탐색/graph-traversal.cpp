@@ -31,7 +31,10 @@ int main() {
     // Please write your code here.
     input();
     pro(1);
-    cout << cnt-1;
-
+    if(cnt-1 == -1){
+        cout << 0;
+    } else {
+        cout << cnt-1;
+    }
     return 0;
 }
