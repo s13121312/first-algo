@@ -53,7 +53,7 @@ void pro(int cur, int cnt){
         return;
     }
 
-    for(int i=1;i<=n;i++){
+    for(int i=cur;i<=n;i++){
         if(!visit[i]){
             visit[i] = true;
             selected.push_back(i);
