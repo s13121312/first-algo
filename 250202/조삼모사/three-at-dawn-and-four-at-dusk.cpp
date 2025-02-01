@@ -26,18 +26,11 @@ int minusCalc(){
             if(visit[i] && visit[j]){
                 choosed += pArr[i][j];
             }
-        }
-    }
-
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
-            if(i==j)continue;
             if(!visit[i] && !visit[j]){
                 unchoosed += pArr[i][j];
             }
         }
     }
-
 
     //cout << choosed << ' ' <<unchoosed << '\n';
     return abs(choosed - unchoosed);
@@ -53,15 +46,23 @@ void pro(int cur, int cnt){
         return;
     }
 
-    for(int i=cur;i<=n;i++){
-        if(!visit[i]){
-            visit[i] = true;
-            selected.push_back(i);
-            pro(i+1, cnt+1);
-            visit[i] = false;
-            selected.pop_back();
-        }
-    }
+    if(cur == n+1)return;
+
+    pro(cur+1, cnt);
+
+    visit[cur] = true;
+    pro(cur+1, cnt+1);
+    visit[cur] = false;
+
+    // for(int i=cur;i<=n;i++){
+    //     if(!visit[i]){
+    //         visit[i] = true;
+    //         selected.push_back(i);
+    //         pro(i+1, cnt+1);
+    //         visit[i] = false;
+    //         selected.pop_back();
+    //     }
+    // }
 
 }
 
