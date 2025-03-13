@@ -22,9 +22,8 @@ int main() {
         int t1 = pq.top();
         pq.pop();
         int t2 = pq.top();
-        
+        pq.pop();
         if(t1 == t2) {
-            pq.pop();
             continue;
         } else {
             pq.push(t1-t2);
