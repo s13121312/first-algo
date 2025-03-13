@@ -20,7 +20,7 @@ int main() {
             break;
         }
         int t1 = pq.top();
-        pq.top();
+        pq.pop();
         int t2 = pq.top();
         
         if(t1 == t2) {
