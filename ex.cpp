@@ -2,47 +2,53 @@
 using namespace std;
 
 int n;
-int t[25], p[25];
+unordered_map<string, int> um;
+int main(void) {
 
-int maxVal = 0;
-
-
-void input(){
     cin >> n;
-    for(int i=0;i<n;i++){
-        int tv, pv;
-        cin >> tv >> pv;
-        t[i] = tv;
-        p[i] = pv;
+
+    for(int i=0;i<n;i++) {
+        string str;
+        cin >> str;
+        um[str]++;
     }
-}
+    string an;
+    int ans = 0;
+    for(unordered_map<string,int>::iterator it = um.begin();it!=um.end();it++) {
+        if(ans <= it-> second) {
+            if(ans == it->second) {
+                an = an < it -> first ? an : it ->first;
+            } else {
+                an = it->first;
+            }
 
-
-void pro2(int day, int income){
-    if(day >= n+1)return;
-    
-    if(day == n){
-        maxVal = max(maxVal, income);
-        return;
+            ans = it -> second;
+        }
     }
 
-    //선택안할때때
-    pro2(day+1, income);
-
-    //해당일에 일을 선택
-    pro2(day + t[day], income + p[day]);
+    cout << an;
     
-}
-
-
-int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
-    input();
-    //pro(0);
-    pro2(0,0);
-    cout << maxVal;
-
     return 0;
 }
+
+
+/*int main(void) {
+    
+    getline(cin, a);
+    getline(cin, b);
+
+    int idx = 0;
+    int tmp = 0;
+
+    while(1) {
+        if(a.find(b, idx) == string::npos)break;
+        tmp++;
+        idx = a.find(b, idx + b.size());
+        cout << idx << ' ';
+        
+    }
+    
+    cout << '\n' << tmp;
+
+    return 0;
+}*/

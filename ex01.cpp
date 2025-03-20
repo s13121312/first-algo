@@ -5,8 +5,8 @@ vector<vector<int>> wires;
 vector<int> graph[105];
 int answer = -1;
 
-https://webddevys.tistory.com/m/551
-다시 보고 이해해보자.
+//https://webddevys.tistory.com/m/551
+//다시 보고 이해해보자.
 
 int dfs(int togo, int now, int cnt){
     
